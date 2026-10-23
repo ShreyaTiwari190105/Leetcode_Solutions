@@ -1,5 +1,5 @@
 class Solution:
-    def nextGreaterElement(self, nums1: List[int], nums2: List[int]) -> List[int]:
+    def nextGreaterElement(self, nums1: list[int], nums2: list[int]) -> list[int]:
         stack = []
         next_greater = {}
 
@@ -10,11 +10,6 @@ class Solution:
 
             stack.append(num)
 
-        answer = []
-        for num in nums1:
-            if num in next_greater:
-                answer.append(next_greater[num])
-            else:
-                answer.append(-1)
+        return [next_greater.get(num, -1) for num in nums1]
 
-        return answer
+
